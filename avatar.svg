@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-labelledby="title">
+  <title id="title">Profile avatar</title>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" rx="60" fill="url(#bgGrad)" />
+  <circle cx="250" cy="170" r="90" fill="#ffffff" opacity="0.12" />
+  <circle cx="250" cy="175" r="75" fill="#ffffff" />
+  <path d="M153 395c0-68 59-123 132-123s132 55 132 123" fill="#ffffff" opacity="0.85" />
+  <circle cx="200" cy="165" r="12" fill="#2563eb" />
+  <circle cx="300" cy="165" r="12" fill="#2563eb" />
+  <path d="M205 220c20 18 46 18 66 0" stroke="#2563eb" stroke-width="10" fill="none" stroke-linecap="round" />
+</svg>
