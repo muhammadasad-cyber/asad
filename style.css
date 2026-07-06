@@ -277,12 +277,14 @@ body.dark-mode .btn-primary {
 .about-grid,
 .experience-grid,
 .contact-grid,
-.skills-grid {
+.skills-grid,
+.project-grid {
   display: grid;
   gap: 1.25rem;
 }
 
-.about-grid {
+.about-grid,
+.project-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 2rem;
 }

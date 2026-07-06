@@ -4,9 +4,9 @@ const themeToggle = document.querySelector('.theme-toggle');
 const body = document.body;
 const typedTextEl = document.getElementById('typed-text');
 const phrases = [
-  'Cybersecurity Professional.',
-  'Ethical Hacking Advocate.',
-  'Security-conscious Developer.'
+  'learning cybersecurity basics.',
+  'studying web security.',
+  'practicing safe coding.'
 ];
 let phraseIndex = 0;
 let charIndex = 0;
