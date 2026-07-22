@@ -3,13 +3,7 @@ const navLinks = document.querySelector('.nav-links');
 const themeToggle = document.querySelector('.theme-toggle');
 const body = document.body;
 const typedTextEl = document.getElementById('typed-text');
-const phrases = [
-  'learning cybersecurity basics.',
-  'studying web security.',
-  'practicing safe coding.'
-];
-let phraseIndex = 0;
-let charIndex = 0;
+const contactForm = document.querySelector('.contact-form');
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -45,28 +39,9 @@ const toggleTheme = () => {
   themeToggle.setAttribute('aria-label', isDark ? 'Toggle light mode' : 'Toggle dark mode');
 };
 
-const typeText = () => {
-  const currentPhrase = phrases[phraseIndex];
-  if (charIndex < currentPhrase.length) {
-    typedTextEl.textContent += currentPhrase.charAt(charIndex);
-    charIndex += 1;
-    setTimeout(typeText, 90);
-  } else {
-    setTimeout(eraseText, 1500);
-  }
-};
-
-const eraseText = () => {
-  const currentPhrase = phrases[phraseIndex];
-  if (charIndex > 0) {
-    typedTextEl.textContent = currentPhrase.substring(0, charIndex - 1);
-    charIndex -= 1;
-    setTimeout(eraseText, 40);
-  } else {
-    phraseIndex = (phraseIndex + 1) % phrases.length;
-    setTimeout(typeText, 500);
-  }
-};
+if (typedTextEl) {
+  typedTextEl.textContent = 'I am a cybersecurity student.';
+}
 
 menuToggle?.addEventListener('click', () => {
   navLinks?.classList.toggle('active');
@@ -74,5 +49,19 @@ menuToggle?.addEventListener('click', () => {
 
 themeToggle?.addEventListener('click', toggleTheme);
 
+contactForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const nameInput = contactForm.querySelector('input[name="name"]');
+  const emailInput = contactForm.querySelector('input[name="email"]');
+  const messageInput = contactForm.querySelector('textarea[name="message"]');
+  const name = nameInput?.value?.trim() || 'there';
+  const email = emailInput?.value?.trim() || '';
+  const message = messageInput?.value?.trim() || '';
+  const subject = encodeURIComponent(`Portfolio message from ${name}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+
+  window.location.href = `mailto:muhammadasadmohana@gmail.com?subject=${subject}&body=${body}`;
+});
+
 initializeTheme();
-setTimeout(typeText, 800);
